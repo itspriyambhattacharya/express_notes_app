@@ -1,0 +1,26 @@
+{
+  "name": "express_notes_app",
+  "version": "1.0.0",
+  "description": "Basic Notes app project",
+  "homepage": "https://github.com/itspriyambhattacharya/express_notes_app#readme",
+  "bugs": {
+    "url": "https://github.com/itspriyambhattacharya/express_notes_app/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itspriyambhattacharya/express_notes_app.git"
+  },
+  "license": "MIT",
+  "author": "Priyam Bhattacharya",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "mysql2": "^3.14.1",
+    "nodemon": "^3.1.10"
+  }
+}
