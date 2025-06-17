@@ -31,6 +31,7 @@ route.post("/", (req, res) => {
     }
     console.log("Insertion successful", results.insertId);
   });
+  res.redirect("/");
 });
 
 module.exports = route;
