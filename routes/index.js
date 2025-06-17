@@ -29,8 +29,8 @@ route.post("/", (req, res) => {
       return res.status(500).send("Insertion Failed");
     }
     console.log("Insertion successful", results.insertId);
+    res.redirect("/");
   });
-  res.redirect("/");
 });
 
 module.exports = route;
