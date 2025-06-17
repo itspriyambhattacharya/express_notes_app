@@ -9,15 +9,15 @@ route.use((req, res, next) => {
 
 route.get("/:id", (req, res) => {
   console.log(req.params);
-  const delId = req.params.id;
+  const { id } = req.params;
   const sql = `DELETE FROM note WHERE id = ?`;
 
-  pool.query(sql, [delId], (err, results, fields) => {
+  pool.query(sql, [id], (err, results, fields) => {
     if (err) {
       console.log("Deletion Failed");
       return res.status(500).send("Failed to delete");
     }
-    console.log(`Deleted note with id = ${delId}`);
+    console.log(`Deleted note with id = ${id}`);
     res.redirect("/");
   });
 });
