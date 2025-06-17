@@ -15,16 +15,19 @@
         <h1 class="text-center mb-5">MyNotes</h1>
         <!-- search box start -->
         <div class="mb-3 d-flex justify-content-end">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-            style="width: 300px"
-          />
-          <a href="/search" class="btn btn-outline-success" type="search">
-            Search
-          </a>
+          <form action="/search" method="get" class="d-flex">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search Note"
+              aria-label="Search"
+              name="search"
+              style="width: 300px"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
         </div>
         <!-- search box end -->
         <form
