@@ -10,9 +10,11 @@ app.use(express.urlencoded({ extended: true }));
 
 const idx = require("./routes/index");
 const del = require("./routes/delete");
+const search = require("./routes/search");
 
 app.use("/", idx);
 app.use("/delete", del);
+app.use("/search", search);
 
 app.listen(port, () => {
   console.log(`App is listening on port ${port}`);
