@@ -7,4 +7,11 @@ route.use((req, res, next) => {
   next();
 });
 
+route.get("/", (req, res) => {
+  const { search } = req.query;
+  console.log(search);
+
+  res.send(`Searched ${search}`);
+});
+
 module.exports = route;
