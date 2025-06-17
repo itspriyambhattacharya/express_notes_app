@@ -9,7 +9,14 @@ route.use((req, res, next) => {
 });
 
 route.get("/", (req, res) => {
-  res.render("index");
+  const sql = `SELECT * FROM note`;
+  pool.query(sql, (err, results, fields) => {
+    if (err) {
+      console.log("Database insertion failed", err.message);
+      return res.status(500).send("Insertion Failed");
+    }
+    res.render("index", { noteObj: results });
+  });
 });
 
 route.post("/", (req, res) => {
