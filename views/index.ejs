@@ -13,6 +13,23 @@
     <main class="mt-5">
       <div class="container my-5">
         <h1 class="text-center mb-5">MyNotes</h1>
+        <!-- search box start -->
+        <div class="mb-3 d-flex justify-content-end">
+          <form action="/search" method="get" class="d-flex">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search Note"
+              aria-label="Search"
+              name="search"
+              style="width: 300px"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+        <!-- search box end -->
         <form
           class="bg-danger-subtle text-danger-emphasis p-5"
           style="border-radius: 15px"
