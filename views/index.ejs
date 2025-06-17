@@ -63,7 +63,10 @@
               <td><%= note.noteHeading %></td>
               <td><%= note.noteDesc %></td>
               <td>
-                <a class="btn btn-danger" href="/delete" role="button"
+                <a
+                  class="btn btn-danger"
+                  href="/delete/<%= note.id %>"
+                  role="button"
                   >Delete</a
                 >
               </td>
