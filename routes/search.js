@@ -12,7 +12,19 @@ route.get("/", (req, res) => {
   console.log(req.query);
   console.log(q);
 
-  res.send(`Searched ${q}`);
+  const sql = `SELECT * FROM note WHERE noteHeading LIKE ? or noteDesc LIKE ?`;
+
+  const wildCard = `%${q}%`;
+
+  pool.query(sql, [wildCard, wildCard], (err, results, fields) => {
+    if (err) {
+      console.log("No Match found ", err.message);
+      return;
+    }
+    res.render("index", { noteObj: results });
+  });
+
+  // res.send(`Searched ${q}`);
 });
 
 module.exports = route;
