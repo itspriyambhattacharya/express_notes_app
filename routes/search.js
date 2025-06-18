@@ -8,10 +8,11 @@ route.use((req, res, next) => {
 });
 
 route.get("/", (req, res) => {
-  const { search } = req.query;
-  console.log(search);
+  const { q } = req.query;
+  console.log(req.query);
+  console.log(q);
 
-  res.send(`Searched ${search}`);
+  res.send(`Searched ${q}`);
 });
 
 module.exports = route;
