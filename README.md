@@ -1,12 +1,14 @@
+
 # 📝 Notes App using Express.js, MySQL & EJS
 
-A simple, full-stack **Notes Management Application** built with **Express.js**, **MySQL**, and **EJS templating engine**. This app allows users to add and delete notes using a clean UI powered by Bootstrap 5.
+A simple, full-stack **Notes Management Application** built with **Express.js**, **MySQL**, and **EJS templating engine**. This app allows users to add, search, and delete notes using a clean UI powered by Bootstrap 5.
 
 ---
 
 ## 🚀 Features
 
 - 📄 Create a new note with a heading and description
+- 🔍 Search notes by keywords in heading or description
 - 🗑 Delete existing notes
 - 📋 View all notes in a structured table
 - ⚙️ MySQL-based data persistence
@@ -37,7 +39,8 @@ express_notes_app/
 │
 ├── routes/
 │   ├── index.js            # Route for note display and insertion
-│   └── delete.js           # Route for note deletion
+│   ├── delete.js           # Route for note deletion
+│   └── search.js           # Route for searching notes
 │
 ├── views/
 │   └── index.ejs           # Main UI template
@@ -94,9 +97,10 @@ http://localhost:3000
 
 ## ✨ UI Preview
 
-> A clean Bootstrap-styled interface for adding and viewing notes.
+> A clean Bootstrap-styled interface for adding, viewing, searching, and deleting notes.
 
 - 📌 Add a note using form
+- 🔍 Search existing notes by heading or description
 - 📋 View all saved notes in a table
 - ❌ Delete note with a single click
 
@@ -107,6 +111,7 @@ http://localhost:3000
 - `GET /` → Renders all notes from MySQL to `index.ejs`
 - `POST /` → Inserts new note into the `note` table
 - `GET /delete/:id` → Deletes a note by ID and redirects to `/`
+- `GET /search?q=...` → Fetches notes whose heading or description matches the query
 
 All data operations are handled securely using parameterized queries via `mysql2`.
 
