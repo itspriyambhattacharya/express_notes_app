@@ -23,8 +23,6 @@ route.get("/", (req, res) => {
     }
     res.render("index", { noteObj: results });
   });
-
-  // res.send(`Searched ${q}`);
 });
 
 module.exports = route;
